@@ -13,6 +13,7 @@ public class Nascimento {
         String dataAtual = scanner.nextLine();
 
         calcularIdade(dataNascimento, dataAtual);
+        scanner.close();
     }
 
     public static void calcularIdade(String dataNascimento, String dataAtual) {

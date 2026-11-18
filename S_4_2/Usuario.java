@@ -20,9 +20,14 @@ public class Usuario {
         if (args.length < 3) {
             throw new IllegalArgumentException(" You must introduce your name, weight and height");
         }
+
         String name = args[0];
         double weight = Double.parseDouble(args[1]);
         double height = Double.parseDouble(args[2]);
+
+        if (weight <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Weight and height must be positive numbers");
+        }
         
         return new Usuario(name, weight, height);
     }
@@ -31,16 +36,17 @@ public class Usuario {
             System.err.println("Error: You need to introduce your name, weight and height");
             return;
         }
-        try{
-        
-        Usuario usuario = criarDoArray(args);
+
+        try {
+
+            Usuario usuario = criarDoArray(args);
         double imc = usuario.calculateIMC();
 
         System.out.println("-------------------------------------------------");
-            System.out.printf("| %-12s | %-8s | %-8s | %-6s |\n", "Name", "Weight(kg)", "Height(m)", "IMC");
-            System.out.println("-------------------------------------------------");
-            System.out.printf("| %-12s | %-8.1f | %-8.2f | %-6.2f |\n", usuario.name, usuario.weight, usuario.height, imc);
-            System.out.println("-------------------------------------------------");
+        System.out.printf("| %-12s | %-8s | %-8s | %-6s |\n", "Name", "Weight(kg)", "Height(m)", "IMC");
+        System.out.println("-------------------------------------------------");
+        System.out.printf("| %-12s | %-8.1f | %-8.2f | %-6.2f |\n", usuario.name, usuario.weight, usuario.height, imc);
+        System.out.println("-------------------------------------------------");
     } catch (NumberFormatException e){
         System.err.println("Error: the weight and heigth need to be valid numbers");
     } catch (Exception e) {
