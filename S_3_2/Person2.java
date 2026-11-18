@@ -39,7 +39,7 @@ public class Person2 {
 
         for (int i = 0; i<3; i++){
             personas[i] = new Person2();
-            System.out.println("\n--- Fecha da persona" + (i+1) + "---");
+            System.out.println("\n--- Ficha da persona" + (i+1) + "---");
 
             System.out.println("Name: ");
             personas[i].setName(scanner.nextLine());

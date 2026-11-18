@@ -33,9 +33,9 @@ public class Person3 {
         this.heightInCm = heightInCm;
         }
         
-    public float getIMC(float weightInKg, float heightInCm){   
+    public float getIMC(){   
         if (this.heightInCm <= 0 || this.weightInKg <= 0){
-            System.out.println("Atencion incorret values of weight or height");
+            System.err.println("Atencion incorret values of weight or height");
             return 0.0f;
         }    
         float heightInMeters = this.heightInCm / 100.0f;
@@ -65,6 +65,7 @@ public class Person3 {
         Person3 maisPesado = personas[0];
 
         for (int i = 0; i<3; i++){
+            System.out.printf("IMC de %s: %.2f%n", personas[i].getName(), personas[i].getIMC());
             if(personas[i].getheightInCm() > maisAlto.getheightInCm()){
                 maisAlto = personas[i];
             }
